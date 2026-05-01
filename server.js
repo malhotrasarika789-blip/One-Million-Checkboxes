@@ -2,8 +2,7 @@ import "dotenv/config";
 import http from "node:http";
 import { Server } from "socket.io";
 import app from "./src/app.js";
-
-import "./src/config/redis.js";
+import { connectRedis } from "./src/config/redis.js";
 
 import { setupSocket } from "./src/sockets/socketHandler.js";
 
@@ -17,6 +16,7 @@ const io = new Server(server, {
     },
 });
 
+await connectRedis();
 setupSocket(io);
 
 server.listen(PORT, () => {
