@@ -8,7 +8,7 @@ const token = localStorage.getItem("token");
 let socket = null;
 
 const TOTAL = 1000000;
-const VISIBLE = 30000;
+const VISIBLE = 10000;
 
 let offset = 0;
 const state = new Array(TOTAL).fill(false);
