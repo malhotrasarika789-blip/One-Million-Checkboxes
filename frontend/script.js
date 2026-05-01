@@ -41,7 +41,7 @@ loginBtn.addEventListener("click", async () => {
         loginBtn.innerText = "Please wait...";
         loginBtn.disabled = true;
 
-        const response = await fetch("http://localhost:5000/auth/login", {
+        const response = await fetch("https://one-million-checkboxes-ycrr.onrender.com/auth/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -67,7 +67,7 @@ loginBtn.addEventListener("click", async () => {
 /* SOCKET */
 if (token) {
 
-    socket = io("http://localhost:5000", {
+    socket = io("https://one-million-checkboxes-ycrr.onrender.com", {
         auth: { token },
     });
 
